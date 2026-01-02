@@ -141,6 +141,7 @@
     margin-top:12px;
     display:grid;
     gap:10px;
+    max-width:100%;
   }
   .linkItem{
     display:flex;
@@ -152,6 +153,9 @@
     border:1px solid rgba(255,255,255,0.10);
     cursor:pointer;
     user-select:none;
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
   }
   .linkItem:active{ transform:scale(0.99); }
   .icon{
@@ -164,6 +168,7 @@
     font-weight:900;
     color:rgba(255,255,255,0.78);
     flex:0 0 auto;
+    flex-shrink:0;
   }
   .lText{ flex:1; min-width:0; }
   .lTitle{
@@ -191,6 +196,7 @@
     background:rgba(0,0,0,0.18);
     color:rgba(255,255,255,0.82);
     flex:0 0 auto;
+    flex-shrink:0;
   }
 
   .status{
@@ -520,3 +526,4 @@ setStatus('Ready.');
 </script>
 </body>
 </html>
+::contentReference[oaicite:0]{index=0}
