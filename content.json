@@ -1,0 +1,48 @@
+{
+  "app": {
+    "name": "Skunk & Munk TV",
+    "tagline": "Kids music + fun for families",
+    "poweredBy": "Powered by Base",
+    "logo": "skunk-munk.png"
+  },
+  "sections": [
+    {
+      "id": "watch",
+      "title": "Watch",
+      "links": [
+        {
+          "label": "Visit Skunk & Munk TV",
+          "url": "https://www.skunkandmunktv.com"
+        }
+      ]
+    },
+    {
+      "id": "connect",
+      "title": "Connect",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/theskunkandmunkshow/"
+        },
+        {
+          "label": "TikTok",
+          "url": "https://www.tiktok.com/@theskunkandmunkshow"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/TheSkunkAndMunkShow"
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "title": "About",
+      "text": "Skunk & Munk TV is a kids music show built for fun, positivity, and family-friendly vibes."
+    },
+    {
+      "id": "parents",
+      "title": "Parents",
+      "text": "This app links to official platforms and does not collect personal data or show ads."
+    }
+  ]
+}
