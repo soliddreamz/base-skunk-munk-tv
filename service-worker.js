@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'base-skunk-munk-tv-v2';
+const CACHE_VERSION = 'base-skunk-munk-tv-v3';
 const STATIC_CACHE = `static-${CACHE_VERSION}`;
 
 const STATIC_ASSETS = [
