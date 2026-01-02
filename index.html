@@ -47,7 +47,6 @@
     margin:6px 0 4px;
     font-size:18px;
     font-weight:900;
-    letter-spacing:0.2px;
   }
   .desc{
     margin:6px auto 14px;
@@ -65,30 +64,49 @@
     flex-wrap:wrap;
   }
   .tabBtn{
-    appearance:none;
     border:none;
     border-radius:999px;
     padding:10px 12px;
     font-size:13px;
     font-weight:800;
-    color:rgba(255,255,255,0.88);
     background:rgba(0,0,0,0.18);
+    color:#fff;
     border:1px solid rgba(255,255,255,0.10);
     cursor:pointer;
   }
   .tabBtn.active{
-    color:#fff;
     background:linear-gradient(135deg,var(--btn1),var(--btn2));
-    border-color:rgba(255,255,255,0.06);
-    box-shadow:0 10px 28px rgba(239,68,68,0.22);
   }
 
-  .section{ display:none; text-align:left; }
+  .section{ display:none; }
   .section.active{ display:block; }
 
-  .row{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; }
+  .panel{
+    margin-top:12px;
+    border:1px solid rgba(255,255,255,0.10);
+    background:rgba(0,0,0,0.16);
+    border-radius:18px;
+    padding:12px;
+  }
+  .panelTitle{
+    font-weight:900;
+    font-size:14px;
+  }
+  .panelText{
+    margin-top:6px;
+    font-size:13px;
+    color:rgba(255,255,255,0.72);
+    line-height:1.35;
+  }
+
+  .row{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+
   button.primary{
-    appearance:none;
     border:none;
     border-radius:14px;
     padding:13px 14px;
@@ -97,44 +115,18 @@
     font-weight:900;
     color:white;
     background:linear-gradient(135deg,var(--btn1),var(--btn2));
-    box-shadow:0 10px 28px rgba(239,68,68,0.28);
     cursor:pointer;
   }
   button.secondary{
-    appearance:none;
     border-radius:14px;
     padding:13px 14px;
     min-width:160px;
     font-size:15px;
     font-weight:900;
     color:white;
-    background:linear-gradient(135deg,#111827,#0b1220);
-    box-shadow:none;
+    background:#111827;
     border:1px solid rgba(255,255,255,0.10);
     cursor:pointer;
-  }
-  button:disabled{ opacity:0.45; cursor:not-allowed; }
-  button:active{ transform:scale(0.98); }
-
-  .panel{
-    margin-top:10px;
-    border:1px solid rgba(255,255,255,0.10);
-    background:rgba(0,0,0,0.16);
-    border-radius:18px;
-    padding:12px;
-    text-align:center;
-  }
-  .panelTitle{
-    font-weight:900;
-    font-size:14px;
-    text-align:center;
-  }
-  .panelText{
-    margin-top:6px;
-    color:rgba(255,255,255,0.72);
-    font-size:13px;
-    line-height:1.35;
-    text-align:center;
   }
 
   .list{
@@ -143,350 +135,107 @@
     gap:10px;
   }
   .linkItem{
-    display:flex;
-    gap:10px;
-    align-items:center;
     padding:12px;
     border-radius:18px;
     background:rgba(255,255,255,0.04);
     border:1px solid rgba(255,255,255,0.10);
     cursor:pointer;
-    user-select:none;
-  }
-  .linkItem:active{ transform:scale(0.99); }
-  .icon{
-    width:46px; height:46px;
-    border-radius:14px;
-    background:rgba(255,255,255,0.06);
-    border:1px solid rgba(255,255,255,0.10);
-    display:grid;
-    place-items:center;
-    font-weight:900;
-    color:rgba(255,255,255,0.78);
-    flex:0 0 auto;
-  }
-  .lText{ flex:1; min-width:0; }
-  .lTitle{
-    font-weight:900;
-    font-size:14px;
-    margin:0;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
-  .lSub{
-    margin-top:2px;
-    font-size:12px;
-    color:rgba(255,255,255,0.70);
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
-  .pill{
-    font-size:11px;
-    font-weight:900;
-    padding:6px 8px;
-    border-radius:999px;
-    border:1px solid rgba(255,255,255,0.10);
-    background:rgba(0,0,0,0.18);
-    color:rgba(255,255,255,0.82);
-    flex:0 0 auto;
-  }
-
-  .status{
-    margin-top:10px;
-    color:rgba(255,255,255,0.72);
-    font-size:13px;
-    min-height:18px;
-    text-align:center;
-  }
-  .mini{
-    font-size:11px;
-    color:rgba(255,255,255,0.55);
-    text-align:center;
-    margin-top:10px;
   }
 
   .badge{
     display:inline-flex;
     gap:6px;
     align-items:center;
-    justify-content:center;
     font-size:12px;
     font-weight:900;
     padding:8px 10px;
     border-radius:999px;
     border:1px solid rgba(255,255,255,0.10);
-    background:rgba(0,0,0,0.18);
-    color:rgba(255,255,255,0.86);
   }
-  .dot{ width:8px; height:8px; border-radius:999px; background:var(--good); display:inline-block; }
-
-  body::after{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    background:
-      radial-gradient(circle at center, transparent 58%, rgba(0,0,0,0.35)),
-      repeating-linear-gradient(to bottom,
-        rgba(255,255,255,0.02), rgba(255,255,255,0.02) 1px,
-        transparent 2px, transparent 4px
-      );
-    mix-blend-mode:overlay;
-  }
+  .dot{ width:8px; height:8px; border-radius:50%; background:var(--good); }
 </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="card">
-      <img id="brandLogo" src="skunk-munk.png" class="logo" alt="Skunk & Munk logo" onerror="this.style.display='none';" />
+<div class="wrap">
+<div class="card">
 
-      <div class="title" id="appTitle">Skunk & Munk TV</div>
-      <div class="desc" id="appTagline">
-        Kids music + fun for families
-      </div>
+<img src="skunk-munk.png" class="logo" alt="" />
+<div class="title">Skunk & Munk TV</div>
+<div class="desc">Kids music + fun for families</div>
 
-      <div class="row" style="margin-bottom:8px;">
-        <div class="badge"><span class="dot"></span> Pilot • <span id="poweredByText">Powered by Base</span></div>
-      </div>
+<div class="row">
+  <div class="badge"><span class="dot"></span> Pilot • Powered by Base</div>
+</div>
 
-      <div class="tabs">
-        <button class="tabBtn active" data-tab="home">Home</button>
-        <button class="tabBtn" data-tab="watch">Watch</button>
-        <button class="tabBtn" data-tab="connect">Connect</button>
-        <button class="tabBtn" data-tab="about">About</button>
-        <button class="tabBtn" data-tab="parents">Parents</button>
-      </div>
+<div class="tabs">
+  <button class="tabBtn active" data-tab="home">Home</button>
+  <button class="tabBtn" data-tab="watch">Watch</button>
+  <button class="tabBtn" data-tab="connect">Connect</button>
+  <button class="tabBtn" data-tab="about">About</button>
+</div>
 
-      <!-- HOME -->
-      <div id="tab-home" class="section active">
-        <div class="row" style="margin-top:6px;">
-          <button id="goWatch" class="primary">▶ Watch Now</button>
-          <button id="installBtn" class="secondary" style="display:none;">➕ Install App</button>
-        </div>
+<div id="home" class="section active">
+  <div class="panel">
+    <div class="panelTitle">What this is</div>
+    <div class="panelText">
+      A simple, safe home for Skunk & Munk TV. No ads. No accounts. External links only.
+    </div>
+  </div>
+</div>
 
-        <div class="panel" style="margin-top:12px;">
-          <div class="panelTitle">What this is</div>
-          <div class="panelText">
-            A simple, official home for Skunk & Munk TV — no ads, no accounts, no algorithm.
-          </div>
-        </div>
+<div id="watch" class="section">
+  <div class="panel">
+    <button class="primary" onclick="window.location.assign('https://www.skunkandmunktv.com')">
+      ▶ Watch Skunk & Munk TV
+    </button>
+  </div>
+</div>
 
-        <div class="panel" style="margin-top:12px;">
-          <div class="panelTitle">Quick link</div>
-          <div class="panelText">
-            Tap below to open the official site.
-          </div>
-          <div class="row" style="margin-top:10px;">
-            <button id="primaryLinkBtn" class="primary">Open Skunk & Munk TV</button>
-          </div>
-        </div>
-      </div>
+<div id="connect" class="section">
+  <div class="list">
+    <div class="linkItem" onclick="window.location.assign('https://www.instagram.com/theskunkandmunkshow/')">Instagram</div>
+    <div class="linkItem" onclick="window.location.assign('https://www.tiktok.com/@theskunkandmunkshow')">TikTok</div>
+    <div class="linkItem" onclick="window.location.assign('https://www.facebook.com/TheSkunkAndMunkShow')">Facebook</div>
+  </div>
+</div>
 
-      <!-- WATCH -->
-      <div id="tab-watch" class="section">
-        <div class="panel">
-          <div class="panelTitle">Watch</div>
-          <div class="panelText">Open the official Skunk & Munk TV link.</div>
-        </div>
-        <div class="list" id="watchLinks"></div>
-      </div>
-
-      <!-- CONNECT -->
-      <div id="tab-connect" class="section">
-        <div class="panel">
-          <div class="panelTitle">Connect</div>
-          <div class="panelText">Official social platforms.</div>
-        </div>
-        <div class="list" id="connectLinks"></div>
-      </div>
-
-      <!-- ABOUT -->
-      <div id="tab-about" class="section">
-        <div class="panel">
-          <div class="panelTitle">About</div>
-          <div class="panelText" id="aboutText">Loading…</div>
-        </div>
-      </div>
-
-      <!-- PARENTS -->
-      <div id="tab-parents" class="section">
-        <div class="panel">
-          <div class="panelTitle">Parents</div>
-          <div class="panelText" id="parentsText">Loading…</div>
-        </div>
-      </div>
-
-      <div id="status" class="status">Ready.</div>
-      <div class="mini">Pilot • No fan accounts • No tracking • External links only</div>
+<div id="about" class="section">
+  <div class="panel">
+    <div class="panelTitle">About</div>
+    <div class="panelText">
+      Skunk & Munk TV is a kids music show built for fun, positivity, and family-friendly vibes.
     </div>
   </div>
 
+  <div class="panel">
+    <div class="panelTitle">Pilot feedback</div>
+    <div class="panelText">
+      This app is part of a limited pilot. Feedback helps us improve.
+    </div>
+    <div class="row" style="margin-top:10px;">
+      <button class="secondary"
+        onclick="window.location.href='mailto:soliddreamz@gmail.com?subject=Base Pilot Feedback — Skunk & Munk TV';">
+        ✉️ Send feedback
+      </button>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+
 <script>
-const statusEl = document.getElementById('status');
-const tabs = document.querySelectorAll('.tabBtn');
-
-const sections = {
-  home: document.getElementById('tab-home'),
-  watch: document.getElementById('tab-watch'),
-  connect: document.getElementById('tab-connect'),
-  about: document.getElementById('tab-about'),
-  parents: document.getElementById('tab-parents')
-};
-
-const goWatchBtn = document.getElementById('goWatch');
-const installBtn = document.getElementById('installBtn');
-const primaryLinkBtn = document.getElementById('primaryLinkBtn');
-
-const appTitleEl = document.getElementById('appTitle');
-const appTaglineEl = document.getElementById('appTagline');
-const poweredByTextEl = document.getElementById('poweredByText');
-const brandLogoEl = document.getElementById('brandLogo');
-
-const watchLinksEl = document.getElementById('watchLinks');
-const connectLinksEl = document.getElementById('connectLinks');
-const aboutTextEl = document.getElementById('aboutText');
-const parentsTextEl = document.getElementById('parentsText');
-
-let deferredPrompt = null;
-let appData = null;
-
-function setStatus(t){ statusEl.textContent = t; }
-
-function showTab(tab){
-  tabs.forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
-  Object.keys(sections).forEach(k => sections[k].classList.toggle('active', k === tab));
-}
-
-tabs.forEach(btn => btn.addEventListener('click', () => showTab(btn.dataset.tab)));
-goWatchBtn.addEventListener('click', () => showTab('watch'));
-
-function escapeHtml(s){
-  return String(s || '')
-    .replaceAll('&','&amp;')
-    .replaceAll('<','&lt;')
-    .replaceAll('>','&gt;')
-    .replaceAll('"','&quot;')
-    .replaceAll("'","&#039;");
-}
-
-function go(url){
-  if(!url) return;
-  // PWA-safe: same-tab navigation prevents iOS white-screen return issues
-  window.location.assign(url);
-}
-
-function renderLinkList(el, links, iconText){
-  el.innerHTML = '';
-  if(!Array.isArray(links) || !links.length){
-    el.innerHTML = `<div class="panel" style="margin-top:12px;"><div class="panelText">No links found.</div></div>`;
-    return;
-  }
-
-  links.forEach((l) => {
-    const item = document.createElement('div');
-    item.className = 'linkItem';
-    item.setAttribute('role','button');
-    item.setAttribute('tabindex','0');
-
-    const label = l.label || 'Open link';
-    const url = l.url || '';
-    const sub = url ? url.replace(/^https?:\/\//,'') : '';
-
-    item.innerHTML = `
-      <div class="icon">${escapeHtml(iconText || '🔗')}</div>
-      <div class="lText">
-        <p class="lTitle">${escapeHtml(label)}</p>
-        <div class="lSub">${escapeHtml(sub)}</div>
-      </div>
-      <span class="pill">Open</span>
-    `;
-
-    item.addEventListener('click', () => go(url));
-    item.addEventListener('keydown', (e) => {
-      if(e.key === 'Enter' || e.key === ' ') go(url);
-    });
-
-    el.appendChild(item);
-  });
-}
-
-function applyAppHeader(json){
-  const app = json.app || {};
-  if(app.name) appTitleEl.textContent = app.name;
-  if(app.tagline) appTaglineEl.textContent = app.tagline;
-  if(app.poweredBy) poweredByTextEl.textContent = app.poweredBy;
-  if(app.logo){
-    brandLogoEl.src = app.logo;
-    brandLogoEl.style.display = 'block';
-  }
-}
-
-function getSection(json, id){
-  const sections = Array.isArray(json.sections) ? json.sections : [];
-  return sections.find(s => s && s.id === id) || null;
-}
-
-async function loadContent(){
-  try{
-    setStatus('Loading…');
-    const res = await fetch('content.json', { cache: 'no-store' });
-    if(!res.ok) throw new Error('content.json not found');
-    const json = await res.json();
-    appData = json;
-
-    applyAppHeader(json);
-
-    const watch = getSection(json, 'watch');
-    const connect = getSection(json, 'connect');
-    const about = getSection(json, 'about');
-    const parents = getSection(json, 'parents');
-
-    renderLinkList(watchLinksEl, watch && watch.links ? watch.links : [], '▶');
-    renderLinkList(connectLinksEl, connect && connect.links ? connect.links : [], '★');
-
-    aboutTextEl.innerHTML = escapeHtml((about && about.text) ? about.text : '—');
-    parentsTextEl.innerHTML = escapeHtml((parents && parents.text) ? parents.text : '—');
-
-    // Home primary button: first watch link
-    const primaryUrl = (watch && watch.links && watch.links[0] && watch.links[0].url) ? watch.links[0].url : '';
-    primaryLinkBtn.disabled = !primaryUrl;
-    primaryLinkBtn.addEventListener('click', () => go(primaryUrl));
-
-    setStatus('Ready.');
-  }catch(err){
-    console.error(err);
-    setStatus('Could not load content.json. Make sure it exists in the same folder.');
-    aboutTextEl.textContent = 'Could not load content.';
-    parentsTextEl.textContent = 'Could not load content.';
-  }
-}
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installBtn.style.display = 'inline-block';
+const tabs=document.querySelectorAll('.tabBtn');
+const sections=document.querySelectorAll('.section');
+tabs.forEach(btn=>{
+  btn.onclick=()=>{
+    tabs.forEach(b=>b.classList.remove('active'));
+    sections.forEach(s=>s.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  };
 });
-
-installBtn.addEventListener('click', async () => {
-  if(!deferredPrompt) return;
-  deferredPrompt.prompt();
-  try{ await deferredPrompt.userChoice; }catch(e){}
-  deferredPrompt = null;
-  installBtn.style.display = 'none';
-});
-
-if('serviceWorker' in navigator){
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./service-worker.js').catch(()=>{});
-  });
-}
-
-showTab('home');
-loadContent();
-setStatus('Ready.');
 </script>
 </body>
 </html>
